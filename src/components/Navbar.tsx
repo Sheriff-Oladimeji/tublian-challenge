@@ -36,7 +36,7 @@ const navLinks: NavLink[] = [
 const Navbar = () => {
   const path = usePathname();
   return (
-    <nav className="flex justify-between gap-6 flex-col sm:flex-row flex-wrap w-[90%] mx-auto my-6">
+    <nav className="flex justify-between gap-6 flex-col sm:flex-row flex-wrap w-[90%] lg:w-[80%] mx-auto my-6">
       <div className="flex gap-2 items-center">
         <Image src={logo} alt="logo" />
         <Image src={Tublian} alt="tublian" />
@@ -47,7 +47,7 @@ const Navbar = () => {
           <Link
             key={link.id}
             href={link.url}
-            className={`text-sm font-semibold ${
+            className={`text-sm font-semibold  text-[#696969] ${
               path == link.url ? "gradient-text" : ""
             }`}
           >
