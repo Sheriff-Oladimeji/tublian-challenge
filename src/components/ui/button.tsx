@@ -3,15 +3,16 @@ import React from "react";
 type ButtonProps = {
   styles: string;
   children: React.ReactNode;
-  onClick?: () => void;
+  handleClick?: () => void;
  
 };
 
-const Button = ({ styles, children, onClick }: ButtonProps) => {
+const Button = ({ styles, children,handleClick}: ButtonProps) => {
   return (
     <button
       className={`rounded-full p-2 items-center w-full font-medium text-base text-[#121212] ${styles} bg-[#FDD649]`}
-      onClick={onClick}
+      onClick={handleClick}
+      type="submit"
     >
       {children}
     </button>
