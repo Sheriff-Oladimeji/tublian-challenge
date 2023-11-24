@@ -18,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` ${font.className}`}>
-        <Navbar/>
+        <div className="sm:hidden">
+          <Navbar />
+        </div>
         {children}
       </body>
     </html>

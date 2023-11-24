@@ -15,7 +15,7 @@ const navLinks: NavLink[] = [
   {
     id: 1,
     title: "1: Get Started",
-    url: "/get-started",
+    url: "/",
   },
   {
     id: 2,
