@@ -4,13 +4,13 @@ type ButtonProps = {
   styles: string;
   children: React.ReactNode;
   onClick?: () => void;
-  url?: string;
+ 
 };
 
-const button = ({ styles, children, onClick }: ButtonProps) => {
+const Button = ({ styles, children, onClick }: ButtonProps) => {
   return (
     <button
-      className={`rounded-full p-2 items-center ${styles}`}
+      className={`rounded-full p-2 items-center w-full font-medium text-base text-[#121212] ${styles} bg-[#FDD649]`}
       onClick={onClick}
     >
       {children}
@@ -18,4 +18,4 @@ const button = ({ styles, children, onClick }: ButtonProps) => {
   );
 };
 
-export default button;
+export default Button;

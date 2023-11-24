@@ -1,12 +1,14 @@
 import Navbar from "@/components/Navbar";
+import Button from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import bgImage from "public/bg-image.png";
 import React from "react";
 
 const page = () => {
   return (
     <div className="flex flex-col sm:flex-row-reverse  h-screen overflow-y-hidden">
-      <div className="flex-1 overflow-y-auto h-full w-full">
+      <div className="flex-1 overflow-y-auto h-full w-full relative">
         <div className="hidden sm:flex">
           <Navbar />
         </div>
@@ -19,7 +21,7 @@ const page = () => {
               Start recruiting streetcred developers, Today!!
             </p>
           </div>
-          <form className="flex flex-col gap-4">
+          <form className="flex flex-col gap-4 md:w-[80%] lg:w-[70%] ">
             <input
               type="text"
               className=" border-b border-[#888] bg-transparent py-2 active:outline-none focus:outline-none "
@@ -32,7 +34,21 @@ const page = () => {
               placeholder="Last Name"
               name="LastName"
             />
+            <Button styles="">Proceed</Button>
+            <p className="text-[#B7B7B7]">
+              Already have an account?
+              <Link
+                href="/login"
+                className="text-bold font-bold border-b border-[#B7B7B7]"
+              >
+                Log in
+              </Link>
+            </p>
           </form>
+          <div className="hidden sm:flex items-center gap-3  text-[#B7B7B7] absolute bottom-2">
+            <p>Privacy Policy</p>
+            <p>Terms</p>
+          </div>
         </div>
       </div>
       <Image
