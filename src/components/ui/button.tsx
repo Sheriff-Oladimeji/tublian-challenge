@@ -10,7 +10,7 @@ type ButtonProps = {
 const Button = ({ styles, children,handleClick}: ButtonProps) => {
   return (
     <button
-      className={`rounded-full p-2 items-center w-full font-medium text-base text-[#121212] ${styles} bg-[#FDD649]`}
+      className={`rounded-full p-2 items-center font-medium text-base text-[#121212] ${styles} bg-[#FDD649]`}
       onClick={handleClick}
       type="submit"
     >

@@ -15,7 +15,12 @@ background-clip: text;
   
 }
 
-
+.gradient-border {
+  border: 2px solid; 
+  border-image: var(--gradient_2, linear-gradient(109deg, #FBDA61 0%, rgba(255, 90, 205, 0.84) 86.08%));
+  border-image-slice: 1;
+  border-radius: 0.75rem; 
+}
 ::-webkit-scrollbar-track {
  background: var(--background);
 }

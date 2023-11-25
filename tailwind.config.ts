@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -10,9 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         bold: "#FEFEFE",
+        "card-bg": "#1E1E1E",
       },
     },
   },
   plugins: [],
 };
-export default config
+export default config;
