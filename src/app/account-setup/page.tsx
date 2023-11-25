@@ -1,18 +1,18 @@
-"use client"
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
-import Button from '@/components/ui/button';
-import setupData from '@/data/setup';
-import Image from 'next/image';
-import React, { useState } from 'react'
-import { FaCheckCircle } from "react-icons/fa";
+"use client";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Button from "@/components/ui/button";
+import setupData from "@/data/setup";
+import Image from "next/image";
+import React, { useState } from "react";
+import tick from "public/tick-circle.svg";
 
 const AccountSetupPage = () => {
-   const [selected, setSelected] = useState<number>();
+  const [selected, setSelected] = useState<number>();
 
   const handleOptionSelect = (id: number) => {
-    setSelected(id); 
-  }
+    setSelected(id);
+  };
   return (
     <div className=" overflow-y-auto h-full min-h-screen w-full relative bg-[#121212]">
       <div className="hidden sm:flex">
@@ -32,8 +32,8 @@ const AccountSetupPage = () => {
           {setupData.map((data) => (
             <div
               key={data.id}
-              className={`bg-card-bg rounded-xl flex flex-row sm:flex-col gap-2  sm:gap-4 items-center px-3  py-8 w-full h-full relative ${
-                selected === data.id ? "gradient-border" : ""
+              className={`bg-card-bg flex flex-row sm:flex-col gap-2  sm:gap-4 items-center px-3  py-8 w-full h-full relative cursor-pointer ${
+                selected === data.id ? "gradient-border" : "rounded-xl"
               }`}
               onClick={() => handleOptionSelect(data.id)}
             >
@@ -50,9 +50,8 @@ const AccountSetupPage = () => {
                   {data.description}
                 </p>
               </div>
-              <div className=" absolute top-[50%] sm:top-4 right-2 gradient-text ml-8">
-                <FaCheckCircle className="text-inherit" />
-              </div>
+
+              <Image src={tick} alt="tick" />
             </div>
           ))}
         </div>
@@ -63,6 +62,6 @@ const AccountSetupPage = () => {
       </div>
     </div>
   );
-}
+};
 
-export default AccountSetupPage
+export default AccountSetupPage;
