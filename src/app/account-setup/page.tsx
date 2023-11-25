@@ -18,7 +18,7 @@ const AccountSetupPage = () => {
       <div className="hidden sm:flex">
         <Navbar />
       </div>
-      <div className="w-[90%] lg:w-[80%] mx-auto flex flex-col gap-8 text-center ">
+      <div className="w-[90%] lg:w-[80%] mx-auto flex flex-col gap-4 text-center ">
         <div className="flex flex-col gap-2">
           <h1 className="text-bold font-bold text-lg  sm:text-2xl lg:text-3xl">
             How are you planning to use Tublian?
@@ -28,7 +28,7 @@ const AccountSetupPage = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 w-full sm:w-[70%] mx-auto mt-4">
+        <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 w-full md:w-[90%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-auto mt-4">
           {setupData.map((data) => (
             <div
               key={data.id}
@@ -51,14 +51,22 @@ const AccountSetupPage = () => {
                 </p>
               </div>
 
-              <Image src={tick} alt="tick" />
+              <Image
+                src={tick}
+                alt="tick"
+                className={` ${
+                  selected === data.id
+                    ? "flex sm:absolute sm:top-4 right-2"
+                    : "hidden"
+                }  `}
+              />
             </div>
           ))}
         </div>
 
-        <Button styles="w-full sm:w-[30%] mx-auto">Next</Button>
+        <Button styles="w-full sm:w-[50%] md:w-[40%] lg:w-[30%] mx-auto">Next</Button>
 
-        <Footer styles="text-center w-auto left-[45%]" />
+        <Footer styles="w-[30%]  left-[40%]" />
       </div>
     </div>
   );
