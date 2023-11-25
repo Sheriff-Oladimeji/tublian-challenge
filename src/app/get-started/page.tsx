@@ -8,8 +8,8 @@ import React from "react";
 
 const GetStarted = () => {
   return (
-    <div className="flex flex-col sm:flex-row-reverse  h-screen overflow-y-hidden">
-      <div className="flex-1 overflow-y-auto h-full w-full relative">
+    <div className="flex flex-col sm:flex-row-reverse  h-screen overflow-y-hidden m-0">
+      <div className="flex-1 overflow-y-auto h-full w-full relative bg-[#121212]">
         <div className="hidden sm:flex">
           <Navbar />
         </div>
@@ -46,13 +46,13 @@ const GetStarted = () => {
               </Link>
             </p>
           </form>
-         <Footer/>
+          <Footer />
         </div>
       </div>
       <Image
         src={bgImage}
         alt="background image"
-        className="hidden sm:block flex-1 h-full min-h-screen sm:object-contain md:object-cover  "
+        className="hidden sm:block flex-1 h-full w-full sm:object-contain md:object-cover  "
       />
     </div>
   );

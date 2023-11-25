@@ -1,15 +1,19 @@
+"use client"
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Button from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import bgImage from "public/bg-image-1.png";
-import React from "react";
+import React, {useState} from "react";
 
 const CreateAccount = () => {
+  const router = useRouter();
+  const [password, setPassword] = useState("")
   return (
     <div className="flex flex-col sm:flex-row-reverse  h-screen overflow-y-hidden">
-      <div className="flex-1 overflow-y-auto h-full w-full relative">
+      <div className="flex-1 overflow-y-auto h-full w-full relative bg-[#121212]">
         <div className="hidden sm:flex">
           <Navbar />
         </div>
@@ -23,7 +27,7 @@ const CreateAccount = () => {
               <span className="text-[#4BA3FF]">@John Doe</span>
             </p>
           </div>
-          <form className="flex flex-col gap-4 md:w-[80%] lg:w-[70%] ">
+          <form className="flex flex-col gap-6 md:w-[80%] lg:w-[70%] ">
             <input
               type="email"
               className=" border-b border-[#888] bg-transparent py-2 active:outline-none focus:outline-none "
@@ -39,6 +43,11 @@ const CreateAccount = () => {
               name="Password"
             />
             <Button styles="">Create Account</Button>
+            <div className="flex items-center gap-2 text-[#B7B7B7]">
+              <hr />
+              <small>Or</small>
+              <hr />
+            </div>
             <p className="text-[#B7B7B7]">
               Already have an account?
               <Link
@@ -49,7 +58,7 @@ const CreateAccount = () => {
               </Link>
             </p>
           </form>
-          <Footer/>
+          <Footer />
         </div>
       </div>
       <Image

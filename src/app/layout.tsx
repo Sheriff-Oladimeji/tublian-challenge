@@ -17,11 +17,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={` ${font.className}`}>
+      <body
+        className={` ${font.className} m-0 p-0 box-border bg-[#121212] `}
+      >
         <div className="sm:hidden">
           <Navbar />
         </div>
         {children}
+       
       </body>
     </html>
   );
