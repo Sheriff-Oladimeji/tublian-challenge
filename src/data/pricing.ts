@@ -30,7 +30,7 @@ const monthlyPricing: Pricing[] = [
   {
     id: 3,
     type: "Enterprise Plan",
-    price: "Enterprise Plan",
+    price: "Custom Pricing",
     features: [
       "Tailored solutions for large enterprises or agencies.",
       "Full access to all platform features, including custom integrations.",
@@ -65,7 +65,7 @@ const yearlyPricing: Pricing[] = [
   {
     id: 3,
     type: "Enterprise Plan",
-    price: "Enterprise Plan",
+    price: "Custom Pricing",
     features: [
       "Tailored solutions for large enterprises or agencies.",
       "Full access to all platform features, including custom integrations.",
