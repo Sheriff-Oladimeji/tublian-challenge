@@ -42,9 +42,9 @@ const PaymentPage = () => {
             We will customize your experience based on your option.
           </p>
         </div>
-        <div className="bg-card-bg text-[#CFCFCF] flex   w-full sm:w-[60%] md:w-[50%] lg:w-[40%] xl:w-[30%] mx-auto gap-2 rounded-lg p-1">
+        <div className="bg-card-bg text-[#CFCFCF] flex   w-full sm:w-[60%] md:w-[50%] lg:w-[40%] xl:w-[35%] mx-auto gap-2 rounded-lg p-1">
           <button
-            className={`py-2  text-center  rounded-md  flex-1  ${
+            className={`py-2  text-center  rounded-md  flex-1 px-4 ${
               selectedButton === "monthly" ? "gradient-bg text-[#FEFEFE]" : ""
             }`}
             onClick={changeToMonthly}
@@ -52,12 +52,13 @@ const PaymentPage = () => {
             Monthly
           </button>
           <button
-            className={`py-2  text-center  rounded-md  flex-1 ${
+            className={`py-2  text-center  rounded-md  flex-1 flex gap-2 items-center px-4  ${
               selectedButton === "yearly" ? "gradient-bg text-[#FEFEFE] " : ""
             }`}
             onClick={changeToYearly}
           >
-            Annually <span>20% Off</span>
+            Annually
+            <span className="bg-[#445742] text-[#76F368] text-xs rounded-full px-1">20% Off</span>
           </button>
         </div>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 w-full mx-auto mt-4 text-[#FEFEFE]">
