@@ -39,7 +39,7 @@ const PaymentPage = () => {
   };
 
   return (
-    <div className="  w-full relative bg-[#121212]">
+    <div className="  w-full relative bg-[#121212] py-4">
       {openModal && <PaymentModal  setClick={closeModal}/>}
       {openModal && (
         <div
@@ -50,7 +50,7 @@ const PaymentPage = () => {
       <div className="hidden sm:flex">
         <Navbar />
       </div>
-      <div className="w-[90%] lg:w-[80%] mx-auto flex flex-col gap-4    ">
+      <div className="w-[90%] lg:w-[80%] mx-auto flex flex-col gap-8  ">
         <div className="flex flex-col gap-2">
           <h1 className="text-bold font-bold text-lg  sm:text-2xl lg:text-3xl text-center">
             Payment Plan
@@ -80,7 +80,7 @@ const PaymentPage = () => {
             </span>
           </button>
         </div>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 w-full mx-auto  text-[#FEFEFE]">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 w-full mx-auto  text-[#FEFEFE] mb-8">
           {pricingData.map((data) => (
             <div
               key={data.id}
@@ -141,7 +141,7 @@ const PaymentPage = () => {
           ))}
         </div>
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );
