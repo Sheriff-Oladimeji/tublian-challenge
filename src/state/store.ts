@@ -1,8 +1,9 @@
 import { create } from "zustand";
 
+interface Item {
+  id: number;
+  type: string;
+  price: number;
+}
 
-const useStore = create((set) => ({
-  item : {},
-  addItem: () => set((state : {}) => ({})),
-  removeItem: () => set({ bears: 0 }),
-}));
+

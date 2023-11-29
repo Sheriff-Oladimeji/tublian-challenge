@@ -2,22 +2,31 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Button from "@/components/ui/button";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import React, { useState } from "react";
 import tick from "public/tick-circle.svg";
 import tickGreen from "public/tick-green.svg";
 import { monthlyPricing, yearlyPricing } from "@/data/pricing";
-
+import PaymentModal from "@/components/PaymentModal";
 const PaymentPage = () => {
   const [selected, setSelected] = useState<number>();
   const [pricingData, setPricingData] = useState(monthlyPricing);
   const [duration, setDuration] = useState("/Month");
   const [selectedButton, setSelectedButton] = useState<string>("monthly");
+  //  const router = useRouter();
+  const [openModal, setOpenModal] = useState<boolean>(false);
 
+  const handleClick = () => {
+    setOpenModal(true);
+  };
+  const closeModal = () => {
+    setOpenModal(false)
+}
   const changeToYearly = () => {
     setPricingData(yearlyPricing);
     setDuration("/Year");
-    setSelectedButton("yearly")
+    setSelectedButton("yearly");
   };
   const changeToMonthly = () => {
     setPricingData(monthlyPricing);
@@ -28,12 +37,20 @@ const PaymentPage = () => {
   const handleOptionSelect = (id: number) => {
     setSelected(id);
   };
+
   return (
     <div className="  w-full relative bg-[#121212]">
+      {openModal && <PaymentModal />}
+      {openModal && (
+        <div
+          className="fixed inset-0 bg-black/50 z-20 backdrop-blur-[2px]"
+          onClick={closeModal}
+        />
+      )}
       <div className="hidden sm:flex">
         <Navbar />
       </div>
-      <div className="w-[90%] lg:w-[80%] mx-auto flex flex-col gap-4   py-4 ">
+      <div className="w-[90%] lg:w-[80%] mx-auto flex flex-col gap-4    ">
         <div className="flex flex-col gap-2">
           <h1 className="text-bold font-bold text-lg  sm:text-2xl lg:text-3xl text-center">
             Payment Plan
@@ -58,14 +75,16 @@ const PaymentPage = () => {
             onClick={changeToYearly}
           >
             Annually
-            <span className="bg-[#445742] text-[#76F368] text-xs rounded-full px-1">20% Off</span>
+            <span className="bg-[#445742] text-[#76F368] text-xs rounded-full px-1">
+              20% Off
+            </span>
           </button>
         </div>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 w-full mx-auto mt-4 text-[#FEFEFE]">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 w-full mx-auto  text-[#FEFEFE]">
           {pricingData.map((data) => (
             <div
               key={data.id}
-              className={`bg-card-bg flex flex-col gap-4  px-4  py-6  h-full relative cursor-pointer   sm:max-h-[700px] ${
+              className={`bg-card-bg flex flex-col gap-3  px-4  py-4  h-full relative cursor-pointer   sm:max-h-[700px] ${
                 selected === data.id ? "gradient-border" : "rounded-xl"
               }`}
               onClick={() => handleOptionSelect(data.id)}
@@ -103,7 +122,9 @@ const PaymentPage = () => {
               <Button
                 styles={`w-[90%] absolute bottom-4 mx-auto left-[5%] ${
                   data.id === 3 ? "gradient-bg text-[#FEFEFE]" : ""
-                } `}
+                } 
+                  `}
+                setClick={handleClick}
               >
                 Subscribe
               </Button>
