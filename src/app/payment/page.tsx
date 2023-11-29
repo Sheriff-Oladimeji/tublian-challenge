@@ -40,7 +40,7 @@ const PaymentPage = () => {
 
   return (
     <div className="  w-full relative bg-[#121212]">
-      {openModal && <PaymentModal />}
+      {openModal && <PaymentModal  setClick={closeModal}/>}
       {openModal && (
         <div
           className="fixed inset-0 bg-black/50 z-20 backdrop-blur-[2px]"
