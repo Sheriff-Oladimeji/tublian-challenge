@@ -12,7 +12,7 @@ import PaymentModal from "@/components/PaymentModal";
 const PaymentPage = () => {
   const [selected, setSelected] = useState<number>();
   const [pricingData, setPricingData] = useState(monthlyPricing);
-  const [duration, setDuration] = useState("/Month");
+  
   const [selectedButton, setSelectedButton] = useState<string>("monthly");
   //  const router = useRouter();
   const [openModal, setOpenModal] = useState<boolean>(false);
@@ -25,12 +25,12 @@ const PaymentPage = () => {
 }
   const changeToYearly = () => {
     setPricingData(yearlyPricing);
-    setDuration("/Year");
+    
     setSelectedButton("yearly");
   };
   const changeToMonthly = () => {
     setPricingData(monthlyPricing);
-    setDuration("/Month");
+   
     setSelectedButton("monthly");
   };
 
@@ -40,7 +40,6 @@ const PaymentPage = () => {
 
   return (
     <div className="  w-full relative bg-[#121212] py-4">
-      {openModal && <PaymentModal  setClick={closeModal}/>}
       {openModal && (
         <div
           className="fixed inset-0 bg-black/50 z-20 backdrop-blur-[2px]"
@@ -103,9 +102,9 @@ const PaymentPage = () => {
               <h1 className="text-3xl font-bold text-bold">
                 {data.price}
                 {data.id < 3 && (
-                  <s className="text-lg font-medium text-[#B7B7B7]">
-                    {duration}
-                  </s>
+                  <span className="text-lg font-medium text-[#B7B7B7] capitalize">
+                    /{data.duration}
+                  </span>
                 )}
               </h1>
 
@@ -139,6 +138,7 @@ const PaymentPage = () => {
               />
             </div>
           ))}
+          {openModal && <PaymentModal setClick={closeModal} />}
         </div>
 
         {/* <Footer /> */}

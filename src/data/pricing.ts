@@ -3,6 +3,7 @@ interface Pricing {
   type: string;
   price: number | string;
   features: string[];
+  duration: string; 
 }
 
 const monthlyPricing: Pricing[] = [
@@ -15,6 +16,7 @@ const monthlyPricing: Pricing[] = [
       "Increased monthly messages to developers.",
       "Priority support.",
     ],
+    duration: "month", 
   },
   {
     id: 2,
@@ -26,6 +28,7 @@ const monthlyPricing: Pricing[] = [
       "Dedicated account manager for personalized support.",
       "Early access to new features and updates.",
     ],
+    duration: "month", 
   },
   {
     id: 3,
@@ -37,6 +40,7 @@ const monthlyPricing: Pricing[] = [
       "Unlimited monthly messages to developers.",
       "Priority support with 24/7 availability.",
     ],
+    duration: "month", 
   },
 ];
 
@@ -50,6 +54,7 @@ const yearlyPricing: Pricing[] = [
       "Increased monthly messages to developers.",
       "Priority support.",
     ],
+    duration: "year", 
   },
   {
     id: 2,
@@ -61,6 +66,7 @@ const yearlyPricing: Pricing[] = [
       "Dedicated account manager for personalized support.",
       "Early access to new features and updates.",
     ],
+    duration: "year", 
   },
   {
     id: 3,
@@ -72,7 +78,8 @@ const yearlyPricing: Pricing[] = [
       "Unlimited monthly messages to developers.",
       "Priority support with 24/7 availability.",
     ],
+    duration: "year", 
   },
 ];
 
-export {monthlyPricing, yearlyPricing}
+export { monthlyPricing, yearlyPricing };
