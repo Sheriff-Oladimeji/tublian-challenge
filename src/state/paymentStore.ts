@@ -7,19 +7,17 @@ interface Item {
   price: number;
 }
 
+
 interface Payment {
-  items: Item[];
+  item: Item | null;
   addItem: (item: Item) => void;
-  removeItem: (item: Item) => void;
+  removeItem: () => void;
 }
 
 const usePaymentStore = create<Payment>((set) => ({
-  items: [],
-  addItem: (item) => set((state) => ({ items: [...state.items, item] })),
-  removeItem: (item) =>
-    set((state) => ({
-      items: state.items.filter((i) => i.id !== item.id),
-    })),
+  item: null,
+  addItem: (item) => set(() => ({ item })),
+  removeItem: () => set(() => ({ item: null })),
 }));
 
 export default usePaymentStore;
