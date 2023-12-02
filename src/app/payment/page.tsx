@@ -9,6 +9,13 @@ import tick from "public/tick-circle.svg";
 import tickGreen from "public/tick-green.svg";
 import { monthlyPricing, yearlyPricing } from "@/data/pricing";
 import PaymentModal from "@/components/PaymentModal";
+import usePaymentStore from "@/state/paymentStore";
+interface Item {
+  id: number;
+  duration: string;
+  type: string;
+  price: number | string;
+}
 const PaymentPage = () => {
   const [selected, setSelected] = useState<number>();
   const [pricingData, setPricingData] = useState(monthlyPricing);
@@ -16,8 +23,10 @@ const PaymentPage = () => {
   const [selectedButton, setSelectedButton] = useState<string>("monthly");
   //  const router = useRouter();
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const addItem = usePaymentStore((state) => state.addItem);
 
-  const handleClick = () => {
+  const handleClick = (item: Item) => {
+    addItem(item);
     setOpenModal(true);
   };
   const closeModal = () => {
@@ -123,7 +132,7 @@ const PaymentPage = () => {
                   data.id === 3 ? "gradient-bg text-[#FEFEFE]" : ""
                 } 
                   `}
-                setClick={handleClick}
+                setClick={() => handleClick(data)}
               >
                 Subscribe
               </Button>

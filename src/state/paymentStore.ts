@@ -4,7 +4,7 @@ interface Item {
   id: number;
   duration: string;
   type: string;
-  price: number;
+  price: number | string;
 }
 
 

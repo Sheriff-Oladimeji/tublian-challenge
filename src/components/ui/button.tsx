@@ -4,7 +4,6 @@ type ButtonProps = {
   styles: string;
   children: React.ReactNode;
   setClick?: () => void;
- 
 };
 
 const Button = ({ styles, children,setClick}: ButtonProps) => {
