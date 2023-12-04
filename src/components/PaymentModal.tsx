@@ -25,32 +25,36 @@ const PaymentModal = ({ setClick }: Props) => {
           className="cursor-pointer"
         />
       </div>
-      <div className="bg-[#292929] px-4 py-1 rounded-md border border-[#414141]">
-        <div className="flex items-center justify-between">
+      <div className="bg-[#292929]  py-1 rounded-md border border-[#414141]">
+        <div className="flex items-center justify-between pb-3 px-4">
           <h3>{item?.duration === "month" ? "Monthly Plan" : "Yearly Plan"}</h3>
-          <p onClick={setClick} className="text-[#FDD649]">
+          <p
+            onClick={setClick}
+            className="text-[#FDD649] text-sm sm:text-base cursor-pointer"
+          >
             Change Plan
           </p>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="border-b border-[#414141]"></div>
+        <div className="flex flex-col gap-3 px-4 pt-3">
           <span
             className={`rounded-xl px-2 py-1 text-sm w-max ${
               item?.id === 1
                 ? "bg-[#B29BF3]"
                 : item?.id === 2
-                ? "bg-[#79BBFF]"
+                ? "bg-[#0881FF]"
                 : "bg-[#22BFD6]"
             }`}
           >
             {item?.type}
           </span>
           <div className="flex justify-between items-center">
-            <h4>Total:</h4>
+            <h4 className="text-[#FEFEFE] font-bold sm:text-lg">Total:</h4>
             <div>
               <h1 className="text-xl sm:text-2xl font-bold text-bold">
                 {item?.id === 1 || item?.id === 2 ? (
                   <>
-                    <small className="text-[#B7B7B7] text-sm sm:text-lg">
+                    <small className="text-[#B7B7B7] text-sm sm:text-lg mr-2">
                       USD
                     </small>
                     {item?.price}
@@ -66,6 +70,7 @@ const PaymentModal = ({ setClick }: Props) => {
           </div>
         </div>
       </div>
+      <form action=""></form>
     </div>
   );
 }

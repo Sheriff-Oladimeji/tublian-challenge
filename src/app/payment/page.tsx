@@ -102,7 +102,7 @@ const PaymentPage = () => {
                   data.id === 1
                     ? "bg-[#B29BF3]"
                     : data.id === 2
-                    ? "bg-[#79BBFF]"
+                    ? "bg-[#0881FF]"
                     : "bg-[#22BFD6]"
                 }`}
               >
